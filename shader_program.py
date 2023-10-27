@@ -4,6 +4,7 @@ class ShaderProgram:
     def __init__(self,app):
         self.app = app
         self.ctx = app.ctx
+        self.player = app.player #001
 
         # SHADERS #
         self.quad = self.get_program(shader_name='quad')
@@ -11,12 +12,17 @@ class ShaderProgram:
 
         self.set_uniforms_on_init()
     
+    #001
     def set_uniforms_on_init(self):
-        pass
+
+        self.quad['m_proj'].write(self.player.m_proj)
+
+        self.quad['m_model'].write(glm.mat4())
 
     def update(self):
-        pass
-
+        self.quad['m_view'].write(self.player.m_view)
+    #001 ends 
+    
     def get_program(self, shader_name):
         with open(f'shaders/quad.vert') as file:
             vertex_shader = file.read()
