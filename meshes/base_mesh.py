@@ -14,7 +14,6 @@ class BaseMesh:
         self.program = None
 
         # Vertex buffer data type format: "3f 3f"
-        
         self.vbo_format = None
 
         # Attribute names according to the format: ("in_position", "in_color")
@@ -26,8 +25,8 @@ class BaseMesh:
     def get_vertex_data(self) -> np.array:...
 
     def get_vao(self):
-        vertext_data = self.get_vertex_data()
-        vbo = self.ctx.buffer(vertext_data)
+        vertex_data = self.get_vertex_data()
+        vbo = self.ctx.buffer(vertex_data)
         vao = self.ctx.vertex_array(
             self.program, [(vbo, self.vbo_format, *self.attrs)], skip_errors=True
         )

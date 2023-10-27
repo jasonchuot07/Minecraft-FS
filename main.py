@@ -15,27 +15,36 @@ class VoxelEngine:
         # Start pygame
         pg.init()
 
-        # These are the attribute that need to be set first - Necessary setup
+        # These are the attributes that need to be set first - Necessary setup
+        #001 - Set OpenGL context attributes
         pg.display.gl_set_attribute(pg.GL_CONTEXT_MAJOR_VERSION, 3)
         pg.display.gl_set_attribute(pg.GL_CONTEXT_MINOR_VERSION, 3)
         pg.display.gl_set_attribute(pg.GL_CONTEXT_PROFILE_MASK, pg.GL_CONTEXT_PROFILE_CORE)
         pg.display.gl_set_attribute(pg.GL_DEPTH_SIZE, 24)
 
         # Setup window's resolution | from flags - 001
-        pg.display.set_mode((500, 500), flags = pg.OPENGL | pg.DOUBLEBUF)
-        # Setup opengl context
+        #002 - Create a window with OpenGL context
+        pg.display.set_mode((500, 500), flags=pg.OPENGL | pg.DOUBLEBUF)
+        # Setup OpenGL context
         self.ctx = mgl.create_context()
 
         #001 - Enabling depth testing and color blending
+        #003 - Enable depth testing and face culling in the OpenGL context
         self.ctx.enable(flags=mgl.DEPTH_TEST | mgl.CULL_FACE)
 
         #002 - Enabling garbage collecting mode, so unused gl objects are not automatically deleted
+        #001 - Set the garbage collection mode for OpenGL context
         self.ctx.gc_mode = 'auto'
 
         # Setting up time so we can keep track
+        # Initialize Pygame clock for timing
         self.clock = pg.time.Clock()
         self.delta_time = 0
         self.time = 0
+
+        # Hide mouse cursor and grab input
+        pg.event.set_grab(True)
+        pg.mouse.set_visible(False)
 
         # Check if your app is running
         self.is_running = True
@@ -44,14 +53,13 @@ class VoxelEngine:
         self.on_init()
 
     def on_init(self):
-
+        # Create player, shader program, and scene
         self.player = Player(self)
-
         self.shader_program = ShaderProgram(self)
-
         self.scene = Scene(self)
         
     def update(self):
+        # Update player, shader program, and scene
         self.player.update()
 
         # Updating Shader
@@ -64,35 +72,39 @@ class VoxelEngine:
 
         self.time = pg.time.get_ticks() * 0.0001
 
+        # Display frames per second in the window title
         pg.display.set_caption(f' Frames per second: {self.clock.get_fps(): .0f} | Voxel Engine 1.0')
         #-------#
 
     def render(self):
+        # Clear the OpenGL context with a specified color
         self.ctx.clear(color=(0.1, 0.2, 0.2, 1.0))
 
+        # Render the scene
         self.scene.render()
 
-        # Clear current frame
-        # self.ctx.clear()
-        # Display new frame
+        # Display the new frame
         pg.display.flip()
 
 
     def handle_events(self):
-        # Check if ESC is pressed to pause the game
+        # Check for events, such as quitting the game
         for event in pg.event.get():
             if event.type == pg.QUIT or (event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE):
                 self.is_running = False
 
     def run(self):
+        # Main game loop
         while self.is_running:
             self.handle_events()
             self.update()
             self.render()
 
+        # Quit Pygame and exit the program
         pg.quit()
         sys.exit()
 
 if __name__ == '__main__':
+    # Create an instance of the VoxelEngine and run the game
     app = VoxelEngine()
     app.run()

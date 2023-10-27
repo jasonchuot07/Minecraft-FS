@@ -1,5 +1,18 @@
 from settings import *
 
+"""
+1. Projection Matrix (m_proj):
+
+Think of this as the "lens" of the camera. It determines how the 3D scene gets projected onto a 2D plane (your computer screen). Changing this matrix can affect the field of view, perspective, etc.
+
+2. Model Matrix (m_model):
+This matrix represents the position, rotation, and scale of an object in the 3D world. The identity matrix (glm.mat4()) means no transformation, so the object is initially at its default position.
+
+
+3. View Matrix (m_view):
+This matrix represents the position and orientation of the "camera" or the viewer. Changing this matrix moves the "camera" around the scene.
+"""
+
 class Camera:
     def __init__(self, position, yaw, pitch):
         self.position = glm.vec3(position)
