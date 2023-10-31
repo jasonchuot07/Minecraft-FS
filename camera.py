@@ -21,7 +21,7 @@ class Camera:
 
         self.pitch = glm.radians(pitch)
 
-        self.up = glm.vec3(0, 1, 0)
+        self.up = glm.vec3(0, 1, 0) #this means (0x which is side ways, 1y, which is up, and 0z which is forward or backward)
         self.right = glm.vec3(1, 0, 0)
         self.forward = glm.vec3(0, 0, -1)
 
