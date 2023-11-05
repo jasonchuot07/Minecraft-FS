@@ -7,7 +7,7 @@ class ShaderProgram:
         self.player = app.player #001
 
         # SHADERS #
-        self.chunk = self.get_program(shader_name='quad')
+        self.chunk = self.get_program(shader_name='chunk')
         # self.quad = self.get_program(shader_name='quad')
         # --------#
 

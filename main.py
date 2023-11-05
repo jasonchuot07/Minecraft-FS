@@ -78,7 +78,7 @@ class VoxelEngine:
 
     def render(self):
         # Clear the OpenGL context with a specified color
-        self.ctx.clear(color=(0.1, 0.2, 0.2, 1.0))
+        self.ctx.clear(color=(BG_COLOR))
 
         # Render the scene
         self.scene.render()

@@ -4,10 +4,10 @@ import glm
 import math
 
 # Resolution
-WIN_RES = glm.vec2(500, 500)
+WIN_RES = glm.vec2(1600, 900)
 
 # Chunk
-CHUNK_SIZE = 32
+CHUNK_SIZE = 4
 H_CHUNK_SIZE = CHUNK_SIZE // 2
 CHUNK_AREA = CHUNK_SIZE * CHUNK_SIZE
 CHUNK_VOL = CHUNK_AREA * CHUNK_SIZE
@@ -24,8 +24,8 @@ PITCH_MAX = glm.radians(89)
 # Player
 PLAYER_SPD = 0.005
 PLAYER_ROTATION_SPD = 0.003
-PLAYER_POS = glm.vec3(0, 0, 1)
+PLAYER_POS = glm.vec3(H_CHUNK_SIZE, CHUNK_SIZE, 1.5 * CHUNK_SIZE)
 MOUSE_SENS = 0.002
 
 # BG Color
-BG_COLOR = glm.vec3(0.1, 0.16, 0.2)
+BG_COLOR = glm.vec3(0.1, 0.16, 0.25)
