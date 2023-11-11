@@ -1,0 +1,31 @@
+<mxfile host="Electron" modified="2023-11-07T09:04:58.320Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.0.2 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36" etag="yibJzFlGPzNke6BbllgV" version="22.0.2" type="device">
+  <diagram name="Page-1" id="ywy02NK-vhVNfgNA-8S8">
+    <mxGraphModel dx="1289" dy="328" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="XWl9VbFpnkiImBva854k-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="XWl9VbFpnkiImBva854k-1" target="XWl9VbFpnkiImBva854k-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XWl9VbFpnkiImBva854k-1" value="&lt;font color=&quot;#007fff&quot;&gt;VBO &lt;/font&gt;= &lt;font color=&quot;#ff0000&quot; style=&quot;font-size: 9px;&quot;&gt;glGenBuffers(&lt;span style=&quot;border: 0px solid rgb(217, 217, 227); box-sizing: border-box; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(69,89,164,.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; --tw-shadow: 0 0 transparent; --tw-shadow-colored: 0 0 transparent; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-family: &amp;quot;Söhne Mono&amp;quot;, Monaco, &amp;quot;Andale Mono&amp;quot;, &amp;quot;Ubuntu Mono&amp;quot;, monospace; font-size: 9px; text-align: left;&quot; class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;font-family: &amp;quot;Söhne Mono&amp;quot;, Monaco, &amp;quot;Andale Mono&amp;quot;, &amp;quot;Ubuntu Mono&amp;quot;, monospace; font-size: 9px; text-align: left;&quot;&gt;)&lt;/span&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="XWl9VbFpnkiImBva854k-2" value="glGenBuffers = Create an empty container with a unique ID = 1&lt;br style=&quot;font-size: 7px;&quot;&gt;Why 1 ? Because it&#39;s standard, it can be anynumber" style="rounded=0;whiteSpace=wrap;html=1;fontSize=7;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="-210" y="70" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="XWl9VbFpnkiImBva854k-4" value="Explanation" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=7;strokeColor=default;" edge="1" parent="1" source="XWl9VbFpnkiImBva854k-2" target="XWl9VbFpnkiImBva854k-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XWl9VbFpnkiImBva854k-5" value="gl&lt;font color=&quot;#ff0000&quot;&gt;Bind&lt;/font&gt;Buffer(&lt;font color=&quot;#ff0000&quot;&gt;GL_ARRAY_BUFFER&lt;/font&gt;, &lt;font color=&quot;#007fff&quot;&gt;VBO&lt;/font&gt;)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="2.5" y="160" width="195" height="37.5" as="geometry" />
+        </mxCell>
+        <mxCell id="XWl9VbFpnkiImBva854k-9" value="Explanation" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=7;" edge="1" parent="1" source="XWl9VbFpnkiImBva854k-8" target="XWl9VbFpnkiImBva854k-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XWl9VbFpnkiImBva854k-8" value="GL_ARRAY_BUFFER = this means the data type this container will hold is&amp;nbsp;vertex attribute data, like positions, colors, normals ...&lt;br&gt;The whole line means, VBO - the container we just created will be &lt;font color=&quot;#ff0000&quot;&gt;BIND &lt;/font&gt;to store these types of data" style="rounded=0;whiteSpace=wrap;html=1;fontSize=7;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="-260" y="153.75" width="180" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

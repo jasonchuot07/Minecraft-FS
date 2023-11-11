@@ -16,6 +16,8 @@ def add_data(vertex_data, index, *vertices):
 
 
 def build_chunk_mesh(chunk_voxels, format_size):
+    # vertex_data is to build the visible 3 faces of the voxel, because there are only 3 visible face per voxels and each face is divided into 2 triangles, which each triangles have 3 vertices, so 3 face x 2 triangles x 3 vertices = 18. Chunk vol * 18 * vertex_attrs
+    # vertex_attrs include 5 : x, y, z, voxels_id, face_id
     vertex_data = np.empty(CHUNK_VOL * 18 * format_size, dtype='uint8')
     index = 0
 
@@ -25,7 +27,7 @@ def build_chunk_mesh(chunk_voxels, format_size):
                 voxel_id = chunk_voxels[x + CHUNK_SIZE * z + CHUNK_AREA * y]
                 if not voxel_id:
                     continue
-
+                # The whole idea is check if next to the face is empty or not and if it's empty then render the face itself
                 # Top Face
                 if is_void((x, y + 1, z), chunk_voxels):
                     # Format: x, y, z voxel_id, face_id

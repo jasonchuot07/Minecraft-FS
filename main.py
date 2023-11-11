@@ -25,6 +25,7 @@ class VoxelEngine:
         # Setup window's resolution | from flags - 001
         #002 - Create a window with OpenGL context
         pg.display.set_mode((500, 500), flags=pg.OPENGL | pg.DOUBLEBUF)
+        
         # Setup OpenGL context
         self.ctx = mgl.create_context()
 
